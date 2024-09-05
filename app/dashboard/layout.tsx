@@ -6,11 +6,11 @@ export default async function DashboardLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className="w-full bg-100 dark:bg-dark200 lg:min-h-screen flex">
+    <div className="w-full  lg:min-h-screen flex">
       <Sidebar />
-      <div className="w-full">
+      <div className="w-full bg-100 dark:bg-dark200">
         <Header />
-        <div className="max-h-[90vh]  overflow-y-scroll no-scrollbar ">
+        <div className="max-h-screen  overflow-y-scroll no-scrollbar ">
           {children}
         </div>
       </div>

@@ -48,17 +48,13 @@ const PopularCategoriesChart = () => {
             legend: {
               position: "top",
             },
-            title: {
-              display: true,
-              text: "Chart.js Pie Chart",
-            },
           },
         },
       });
     }
   }, []);
   return (
-    <div className="w-full h-fit my-auto">
+    <div className="w-full h-fit md:h-[500px] xl:h-fit flex justify-center">
       <canvas id="popularCategoriesChart"></canvas>
     </div>
   );

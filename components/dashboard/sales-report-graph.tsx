@@ -44,6 +44,9 @@ const SalesReportGraph = () => {
             },
           ],
         },
+        options: {
+          responsive: true,
+        }
       });
     }
   }, []);

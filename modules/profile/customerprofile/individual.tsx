@@ -10,7 +10,7 @@ export default function Individual() {
   return (
     <div className="m-4 h-auto">
       <div className="flex gap-4 lg:flex-row xs:flex-col">
-        <div className="space-y-4 lg:w-1/4 xs:w-full ">
+        <div className="space-y-4 lg:w-[35%] xs:w-full ">
           <div className="bg-white dark:bg-dark rounded-lg p-4">
             {profileData.map((item, index) => (
               <IndividualProfile
@@ -38,7 +38,7 @@ export default function Individual() {
             ))}
           </div>
         </div>
-        <div className="bg-white dark:bg-dark rounded-lg p-4 lg:w-3/4 xs:w-full">
+        <div className="bg-white dark:bg-dark rounded-lg p-4 lg:w-[65%] xs:w-full">
           <div>
             <IndividualHeader />
           </div>

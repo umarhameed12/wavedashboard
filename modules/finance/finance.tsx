@@ -1,6 +1,9 @@
+"use client";
 import Analytics from "@/components/dashboard/analytics";
 import SalesReportGraph from "@/components/dashboard/sales-report-graph";
+import FinanceGraph from "@/components/finance/finance-graph/finance-graph";
 import FinanceTable from "@/components/finance/finance-table/finance-table";
+import { Button } from "@material-tailwind/react";
 import React from "react";
 
 const Finance = () => {
@@ -14,9 +17,9 @@ const Finance = () => {
           </p>
         </div>
         <div className="flex  items-center gap-4 flex-wrap">
-          <div className="flex items-center gap-2 cursor-pointer">
+          <Button className="flex items-center gap-2 bg-[#0A74DA] py-[10px] px-[12px]">
             <svg
-              className="w-5 h-5 text-gray-800 dark:text-white"
+              className="w-5 h-5 text-white dark:text-white"
               aria-hidden="true"
               xmlns="http://www.w3.org/2000/svg"
               width="24"
@@ -32,15 +35,15 @@ const Finance = () => {
             </svg>
 
             <p className="font-medium text-sm">Reports</p>
-          </div>
-          <div className="flex items-center gap-2 cursor-pointer">
-            <svg
+          </Button>
+          <Button className="flex items-center gap-2 bg-[#0A74DA] py-[10px] px-[12px]">
+          <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 24 24"
               strokeWidth={1.5}
               stroke="currentColor"
-              className="w-5 h-5 text-gray-800 dark:text-white"
+              className="w-5 h-5 text-white dark:text-white"
             >
               <path
                 strokeLinecap="round"
@@ -54,9 +57,9 @@ const Finance = () => {
               />
             </svg>
 
-            <p className="font-medium text-sm">Reports</p>
-          </div>
-          <div className="flex items-center gap-2 cursor-pointer  bg-200 rounded-full  py-2 px-4">
+            <p className="font-medium text-sm">Settings</p>
+          </Button>
+          <Button className="flex items-center gap-2 bg-200 py-[10px] px-[12px]">
             <svg
               className="w-5 h-5  text-white"
               aria-hidden="true"
@@ -79,7 +82,7 @@ const Finance = () => {
             </svg>
 
             <p className="font-medium text-sm text-white">Export</p>
-          </div>
+          </Button>
         </div>
       </div>
       <div className="flex flex-col lg:flex-row items-center gap-8 justify-between ">
@@ -175,7 +178,7 @@ const Finance = () => {
           <p className="bg-100 dark:bg-dark200 p-2 rounded-full">12 months</p>
         </div>
         <div className=" lg:max-w-[80vw]">
-          <SalesReportGraph />
+          <FinanceGraph />
         </div>
       </div>
       <div className="bg-white dark:bg-dark  p-4 rounded-md space-y-4 w-full">
