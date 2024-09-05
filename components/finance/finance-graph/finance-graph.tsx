@@ -103,7 +103,7 @@ const FinanceGraph: React.FC = () => {
           }
         };
 
-        new Chart(ctx, config)
+        new Chart(ctx, config);
       }
     }
   }, []);
