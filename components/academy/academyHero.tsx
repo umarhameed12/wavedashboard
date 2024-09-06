@@ -3,7 +3,7 @@ import React from "react";
 
 const AcademyHero = () => {
   return (
-    <div className="  ">
+    <div className="overflow-hidden ">
     <div className="text-center relative bg-[#00418a] h-[40vh] p-4 flex flex-col justify-center">
       {/* <!-- Breadcrumbs --> */}
       <nav className=" block  text-white" aria-label="Breadcrumb">

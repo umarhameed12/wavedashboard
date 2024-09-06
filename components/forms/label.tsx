@@ -2,6 +2,7 @@ import React from "react";
 
 interface Label {
   label: string;
+ 
 }
 
 export default function Label({ label }: Label) {
