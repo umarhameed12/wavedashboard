@@ -10,7 +10,7 @@ export default function AdminProfile() {
   return (
     <div className="m-4 h-auto">
       <div className="flex gap-4 lg:flex-row xs:flex-col">
-        <div className="space-y-4 lg:w-[30%] xs:w-full ">
+        <div className="space-y-4 lg:w-[35%] xs:w-full ">
           <div className="bg-white dark:bg-dark rounded-lg p-4">
             {adminData.map((item, index) => (
               <AdminProfileDetails
@@ -37,7 +37,7 @@ export default function AdminProfile() {
             ))}
           </div>
         </div>
-        <div className="bg-white dark:bg-dark rounded-lg p-4 lg:w-[70%] xs:w-full relative ">
+        <div className="bg-white dark:bg-dark rounded-lg p-4 lg:w-[65%] xs:w-full relative ">
           {activityData.map((item, index) => (
             <div key={index}>
               <AdminActivity

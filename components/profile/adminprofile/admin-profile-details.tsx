@@ -88,12 +88,12 @@ export default function AdminProfileDetails({
       <div className="py-4 ">
         <hr />
       </div>
-      <div className="flex sm:flex-row xs:flex-col sm:justify-between sm:items-center  ">
+      <div className="flex sm:flex-row xs:flex-col sm:justify-between sm:items-center gap-2">
         <div className="flex gap-2   sm:justify-start xs:justify-between">
           <Image src={theme == "dark" ? emailLight : emailDark} alt="email" />
           <p className="capitalize ">{emailTitle}</p>
         </div>
-        {email}
+        <p>{email}</p>
       </div>
       <div className="flex sm:flex-row xs:flex-col sm:justify-between sm:items-center ">
         <div className="flex gap-2   sm:justify-start xs:justify-between">

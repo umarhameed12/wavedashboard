@@ -54,12 +54,12 @@ export default function Dashboard() {
               <TopCustomers />
             </div>
           </div>
-          <div className="flex lg:flex-row xs:flex-col  gap-4 h-auto w-full">
-            <div className="  bg-white dark:bg-dark rounded-lg mt-8 lg:w-2/5 sm:w-full p-8 ">
+          <div className="flex xl:flex-row xs:flex-col  gap-4 h-auto w-full">
+            <div className="  bg-white dark:bg-dark rounded-lg mt-8 xl:w-2/5 sm:w-full p-8 ">
               <Heading heading="Popular Categories" />
               <PopularCategoriesChart />
             </div>
-            <div className=" bg-white dark:bg-dark rounded-lg sm:p-8 xs:p-4 mt-8 lg:w-2/3 xs:w-full">
+            <div className=" bg-white dark:bg-dark rounded-lg sm:p-8 xs:p-4 mt-8 xl:w-2/3 xs:w-full">
               <ChartHeading heading="Active Customers" />
               <ActiveCustomersChart />
             </div>
