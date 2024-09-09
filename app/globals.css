@@ -142,3 +142,76 @@
   min-height: 52px;
   border-bottom: 1px solid rgb(81, 81, 81);
 }
+
+/* file */
+.file-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.file-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.file-card:hover {
+  background-color: #f0f0f0;
+}
+
+.file-icon {
+  font-size: 40px;
+  margin-bottom: 10px;
+}
+
+.pdf-icon { color: red; }
+.xls-icon { color: green; }
+.doc-icon { color: blue; }
+.jpg-icon { color: orange; }
+.txt-icon { color: gray; }
+
+.file-drawer {
+  width: 300px;
+  padding: 20px;
+  border-left: 1px solid #ddd;
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100%;
+  background-color: white;
+}
+
+.file-details h3 {
+  margin-top: 20px;
+}
+
+.file-actions {
+  margin-top: 20px;
+  display: flex;
+  gap: 10px;
+}
+
+.download-btn {
+  background-color: #007bff;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.delete-btn {
+  background-color: #ff4d4d;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
