@@ -6,10 +6,21 @@ import CourseCard from "./CourseCard";
 const AcademyCards = () => {
 
     const [isToggled, setIsToggled] = useState(false);
+    const [selectedCategory, setSelectedCategory] = useState('');
+    const [searchKeyword, setSearchKeyword] = useState('');
 
     const handleToggle = () => {
         setIsToggled(!isToggled);
       };
+      const handleCategoryChange = (e:any) => {
+        setSelectedCategory(e.target.value);
+        console.log(handleCategoryChange) // Update selected category
+      };
+
+      const handleSearchChange = (e: any) => {
+        setSearchKeyword(e.target.value.toLowerCase());
+      };
+
       const courses =[
           {
           category: 'Web',
@@ -21,7 +32,7 @@ const AcademyCards = () => {
           {
           category: 'Web',
           title: 'Basics of TypeScript',
-          description: 'Beginner course for Typescript and its basics',
+          description: 'Beginner course for Typescript and its basics web',
           duration: '60 minutes',
           completionStatus: 'Completed 3 times',
           },
@@ -118,18 +129,34 @@ const AcademyCards = () => {
           },
           
     ]
+    let filteredCourses = courses
+    .filter((course) =>
+      selectedCategory
+        ? course.category.toLowerCase() === selectedCategory.toLowerCase()
+        : true
+    )
+    .filter((course) =>
+      course.title.toLowerCase().includes(searchKeyword) ||
+      course.description.toLowerCase().includes(searchKeyword)
+    );
+    // if (isToggled) {
+    //   filteredCourses = filteredCourses.filter(
+    //     (course) => !course.completionStatus.toLowerCase().includes('completed')
+    //   );
+    // }                             
+
   return (
-    <div className="mx-auto sm:py-8 px-4 ">
-  <div className="sm:flex items-center justify-between p-5 gap-5">
+    <div className="mx-auto sm:py-8 px-4">
+  <div className="sm:flex items-center justify-between mb-5 p-5 gap-5">
     {/* Select Dropdown */}
-    <div className=" sm:w-32">
-      <label htmlFor="category" className="block text-sm  text-gray-500 mb-1">
-        Category
-      </label>
+    <div className=" sm:w-32 ">
+     
+      <Label label="Category"/>
       <select
-        className="block w-full p-5  border outline-none  bg-slate-50 border-gray-300 rounded-md  px-4 py-2 text-sm focus:border-blue-500 focus:ring-blue-500"
+        className="block w-full p-5  border outline-none dark:text-black  bg-slate-50 border-gray-300 rounded-md  px-4 py-2 text-sm focus:border-blue-500 focus:ring-blue-500"
         name="category"
         id="category"
+        onChange={handleCategoryChange}
       >
         <option value="">All</option>
         <option value="web">Web</option>
@@ -140,47 +167,56 @@ const AcademyCards = () => {
     </div>
 
     {/* Input Field */}
-    <div className="flex-1">
-      <label htmlFor="keyword" className="block text-sm text-gray-500 mb-1">
-        Search for a course
-      </label>
+    <div className="flex-1 ">
+      
+      <Label label=" Search for a course"/>
       <input
+      onChange={handleSearchChange}
         type="text"
         id="keyword"
         placeholder="Enter a keyword..."
-        className="block sm:w-64 w-full  border border-gray-300  outline-none bg-slate-50 rounded-md px-4 py-2 text-sm focus:border-blue-500 focus:ring-blue-500"
+        className="block sm:w-64 w-full  border border-gray-300 dark:text-black  outline-none bg-slate-50 rounded-md px-4 py-2 text-sm focus:border-blue-500 focus:ring-blue-500"
       />
     </div>
 
     {/* Toggle Button with Label */}
     <div className="flex items-center p-4">
-      <div className="relative  sm:right-2/4 sm:top-3 left-10 inline-flex items-center cursor-pointer">
-        <input
-          type="checkbox"
-          id="toggle-switch"
-          className="sr-only"
-          checked={isToggled}
-          onChange={handleToggle}
-        />
-        <div
-          className={`w-10 h-5 flex items-center rounded-full transition-colors duration-300 ${isToggled ? 'bg-sky-500' : 'bg-gray-300'}`}
-          onClick={handleToggle}
-        >
-          <div
-            className={`bg-white w-4 h-4 rounded-full shadow-md transform transition-transform duration-300 ${isToggled ? 'translate-x-5' : 'translate-x-1'}`}
-          />
+      <div className="relative gap-4 sm:right-2/4 sm:top-3 left-10 inline-flex items-center cursor-pointer">
+      <input
+              type="checkbox"
+              id="toggle-switch"
+              className="sr-only"
+              checked={isToggled}
+              onChange={handleToggle}
+            />
+            <div
+              className={`w-10 h-5 flex items-center rounded-full transition-colors duration-300 ${
+                isToggled ? 'bg-sky-500' : 'bg-gray-300'
+              }`}
+              onClick={handleToggle}
+            >
+              <div
+                className={`bg-white w-4 h-4 rounded-full shadow-md transform transition-transform duration-300 ${
+                  isToggled ? 'translate-x-5' : 'translate-x-1'
+                }`}
+              />
         </div>
-      <label htmlFor="toggle-switch" className="ml-2 p-2 text-sm text-gray-700">
-        Hide completed
-      </label>
+      <Label label=" Hide completed" />
+      
       </div>
     </div>
   </div>
   {/* cards */}
   <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-      {courses.map((course, index) => (
-        <CourseCard key={index} course={course} />
-      ))}
+       {filteredCourses.length > 0 ? (
+          filteredCourses.map((course, index) => (
+            <CourseCard key={index} course={course} />
+          ))
+        ) : (
+          <p className="text-center  text-gray-500 col-span-full">
+            Course is not available right now.
+          </p>
+        )}
     </div>
 </div>
 
