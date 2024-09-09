@@ -38,7 +38,7 @@
 .no-scrollbar {
   -ms-overflow-style: none; /* for Internet Explorer, Edge */
   scrollbar-width: none; /* for Firefox */
-  overflow-y: scroll; 
+  overflow-y: scroll;
 }
 
 .no-scrollbar::-webkit-scrollbar {
@@ -117,8 +117,8 @@
   box-sizing: border-box;
   font-size: 13px;
   font-weight: 400;
-  color: #FFFFFF;
-  background-color:transparent  !important;
+  color: #ffffff;
+  background-color: transparent !important;
   min-height: 48px;
 }
 .btjNUT {
@@ -129,7 +129,7 @@
   box-sizing: border-box;
   font-size: 13px;
   font-weight: 400;
-  color: #FFFFFF;
+  color: #ffffff;
   background-color: transparent !important;
   min-height: 48px;
 }
@@ -138,7 +138,13 @@
   display: flex;
   align-items: stretch;
   width: 100%;
-  background-color:transparent !important;
+  background-color: transparent !important;
   min-height: 52px;
   border-bottom: 1px solid rgb(81, 81, 81);
+}
+
+@media (max-width: 409px) {
+  .check {
+    top: 8rem;
+  }
 }

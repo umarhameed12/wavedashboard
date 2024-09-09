@@ -8,7 +8,7 @@ import React from "react";
 
 const Finance = () => {
   return (
-    <div className="m-4 pt-4 rounded-md space-y-4 max-w-screen">
+    <div className="container m-auto py-4 rounded-md space-y-4 max-w-[1120px] w-full px-5 sm:px-10">
       <div className="flex flex-col lg:flex-row justify-between items-start gap-4 lg:items-center">
         <div className="space-y-2">
           <h1 className="text-xl font-bold">Finance dashboard</h1>
@@ -37,7 +37,7 @@ const Finance = () => {
             <p className="font-medium text-sm">Reports</p>
           </Button>
           <Button className="flex items-center gap-2 bg-[#0A74DA] py-[10px] px-[12px]">
-          <svg
+            <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 24 24"
@@ -85,8 +85,8 @@ const Finance = () => {
           </Button>
         </div>
       </div>
-      <div className="flex flex-col lg:flex-row items-center gap-8 justify-between ">
-        <div className="bg-white dark:bg-dark  p-4 rounded-md space-y-4 w-full">
+      <div className="flex flex-col lg:flex-row items-center gap-8 justify-between">
+        <div className="bg-white dark:bg-dark  p-4 rounded-xl space-y-4 w-full relative overflow-hidden">
           <div className="flex items-center justify-between">
             <div>
               <p className="text-base font-medium capitalize">
@@ -111,7 +111,7 @@ const Finance = () => {
               />
             </svg>
           </div>
-          <div className="flex items-center flex-wrap space-y-2 md:space-y-0 justify-between">
+          <div className="flex items-center flex-wrap space-y-2 md:space-y-0 gap-4">
             <div className="space-y-1">
               <p className="text-xs font-normal capitalize">Card Limit</p>
               <p className="text-xl font-medium">$34,500.00</p>
@@ -125,8 +125,24 @@ const Finance = () => {
               <p className="text-xl font-medium">$7,331.94</p>
             </div>
           </div>
+          <div className="absolute top-14 right-[8px] -m-8 check">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth={1.5}
+              stroke="currentColor"
+              className="size-3 w-24 text-green opacity-25 "
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+              />
+            </svg>
+          </div>
         </div>
-        <div className="bg-white dark:bg-dark  p-4 rounded-md space-y-4 w-full">
+        <div className="bg-white dark:bg-dark  p-4 rounded-md space-y-4 w-full overflow-hidden relative">
           <div className="flex items-center justify-between">
             <div>
               <p className="text-base font-medium capitalize">
@@ -151,7 +167,7 @@ const Finance = () => {
               />
             </svg>
           </div>
-          <div className="flex items-center flex-wrap space-y-2 md:space-y-0 justify-between">
+          <div className="flex items-center flex-wrap space-y-2 md:space-y-0 gap-3">
             <div className="space-y-1">
               <p className="text-xs font-normal capitalize">Card Limit</p>
               <p className="text-xl font-medium">$34,500.00</p>
@@ -165,17 +181,37 @@ const Finance = () => {
               <p className="text-xl font-medium">$7,331.94</p>
             </div>
           </div>
+          <div className="absolute top-14 right-[8px] -m-8 check">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth={1.5}
+              stroke="currentColor"
+              className="size-3 w-24 text-red opacity-25"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M12 9v3.75m9-.75a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9 3.75h.008v.008H12v-.008Z"
+              />
+            </svg>
+          </div>
         </div>
       </div>
-      <div className="bg-white dark:bg-dark  p-4 rounded-md space-y-4 w-full">
-        <div className="flex items-center flex-wrap space-y-2 md:space-y-0 justify-between">
+      <div className="bg-white dark:bg-dark   rounded-md space-y-4 w-full">
+        <div className="flex items-center p-4 flex-wrap space-y-2 md:space-y-0 justify-between">
           <div className="space-y-1">
-            <p className="text-base font-medium capitalize">Account Balance</p>
+            <p className="text-lg font-medium tracking-tight leading-6 truncate">Account Balance</p>
             <p className="text-sm font-normal">
               Monthly balance growth and avg. monthly income
             </p>
           </div>
           <p className="bg-100 dark:bg-dark200 p-2 rounded-full">12 months</p>
+        </div>
+        <div className="px-4">
+          <p className="text-xl md:text-3xl font-semibold">38.33%</p>
+          <p>Average Month </p>
         </div>
         <div className=" lg:max-w-[80vw]">
           <FinanceGraph />

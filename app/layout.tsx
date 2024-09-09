@@ -1,9 +1,9 @@
 import CustomProvider from "./CustomProvider";
 import Provider from "./Provider";
 import "./globals.css";
-import { Inter } from "next/font/google";
+import { Roboto } from "next/font/google"; // Import Roboto
 
-const inter = Inter({ subsets: ["latin"] });
+const roboto = Roboto({ subsets: ["latin"], weight: ["400", "700"] }); // Configure Roboto font
 
 export const metadata = {
   title: "Wave",
@@ -20,7 +20,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={roboto.className}>
+        {" "}
+        {/* Use roboto class */}
         <Provider>
           <CustomProvider>{children}</CustomProvider>
         </Provider>
