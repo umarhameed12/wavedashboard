@@ -46,7 +46,7 @@ const FolderCard = () => {
             Folders
           </Typography>
 
-          <div className="grid gap-4  sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-3">
+          <div className="grid gap-4 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-3">
             {folderData.map((folder, index) => (
               <Card
                 key={index}

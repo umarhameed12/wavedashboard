@@ -50,7 +50,7 @@ const FileCards = () => {
         <div className="flex-grow">
           <h2 className=" dark:text-white text-xl font-bold mb-4">Files</h2>
           <div
-            className={`grid grid-cols-1 xl:grid-cols-${selectedFile ? "3" : "5"} md:grid-cols-3 lg:grid-cols-3  xl:grid-cols-5  p-3 gap-4`}
+            className={`grid grid-cols-1 xl:grid-cols-${selectedFile ? "3" : "5"} md:grid-cols-3 lg:grid-cols-3 p-3 gap-4`}
           >
             {files.map((file, index) => (
               <div

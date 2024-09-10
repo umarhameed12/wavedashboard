@@ -1,6 +1,7 @@
 "use client";
 import Analytics from "@/components/dashboard/analytics";
 import SalesReportGraph from "@/components/dashboard/sales-report-graph";
+import FinanceBudget from "@/components/finance/finance-budget/finance-budget";
 import FinanceGraph from "@/components/finance/finance-graph/finance-graph";
 import FinanceTable from "@/components/finance/finance-table/finance-table";
 import { Button } from "@material-tailwind/react";
@@ -202,22 +203,34 @@ const Finance = () => {
       <div className="bg-white dark:bg-dark   rounded-md space-y-4 w-full">
         <div className="flex items-center p-4 flex-wrap space-y-2 md:space-y-0 justify-between">
           <div className="space-y-1">
-            <p className="text-lg font-medium tracking-tight leading-6 truncate">Account Balance</p>
+            <p className="text-lg font-medium tracking-tight leading-6 truncate">
+              Account Balance
+            </p>
             <p className="text-sm font-normal">
               Monthly balance growth and avg. monthly income
             </p>
           </div>
           <p className="bg-100 dark:bg-dark200 p-2 rounded-full">12 months</p>
         </div>
-        <div className="px-4">
-          <p className="text-xl md:text-3xl font-semibold">38.33%</p>
-          <p>Average Month </p>
+        <div className="flex gap-10 px-4">
+          <div>
+            <p className="text-xl md:text-3xl font-semibold">38.33%</p>
+            <p className="font-medium text-sm leading-none text-[#5F6368]">
+              Average Monthly Growth
+            </p>
+          </div>
+          <div>
+            <p className="text-xl md:text-3xl font-semibold">$45,332.00</p>
+            <p className="font-medium text-sm leading-none text-[#5F6368]">
+              Average Month Income
+            </p>
+          </div>
         </div>
         <div className=" lg:max-w-[80vw]">
           <FinanceGraph />
         </div>
       </div>
-      <div className="bg-white dark:bg-dark  p-4 rounded-md space-y-4 w-full">
+      <div className="bg-white dark:bg-dark  p-4 rounded-xl space-y-4 w-full">
         <div className="flex items-center justify-between">
           <div>
             <p className="text-base font-medium capitalize">
@@ -230,9 +243,42 @@ const Finance = () => {
           <FinanceTable />
         </div>
       </div>
-
-      <div>
-        <Analytics />
+      <div className="bg-white dark:bg-dark  p-6 rounded-xl space-y-4 w-full">
+        <div className="flex items-center justify-between">
+          <div>
+            <p className="text-lg font-medium tracking-tight leading-6 truncate">
+              Budget
+            </p>
+            <p className="text-sm font-medium text-[#5F6368]">
+              Monthly budget summary
+            </p>
+          </div>
+          <Button className="shadow-none hover:bg-gray-300 dark:hover:bg-[#5F6368] w-fit px-2">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth={1.5}
+              stroke="currentColor"
+              className="w-6 h-6 text-gray-800 dark:text-white"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M12 6.75a.75.75 0 1 1 0-1.5.75.75 0 0 1 0 1.5ZM12 12.75a.75.75 0 1 1 0-1.5.75.75 0 0 1 0 1.5ZM12 18.75a.75.75 0 1 1 0-1.5.75.75 0 0 1 0 1.5Z"
+              />
+            </svg>
+          </Button>
+        </div>
+        <div>
+          <p className="text-sm ">
+            Last month; you had <strong>223</strong> expense transactions,{" "}
+            <strong>12</strong> savings entries and <strong>4</strong> bills.
+          </p>
+        </div>
+        <div>
+          <FinanceBudget />
+        </div>
       </div>
     </div>
   );
