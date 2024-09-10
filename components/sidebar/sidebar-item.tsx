@@ -91,6 +91,9 @@ const SidebarItem: React.FC<SidebarItemProps> = ({ isOpen }) => {
       case "/dashboard/academy":
         setActive("academy");
         break;
+      case "/dashboard/file-manager":
+        setActive("file-manager");
+        break;
       case "/dashboard/auth":
         setActive("auth");
         break;
@@ -981,7 +984,7 @@ const SidebarItem: React.FC<SidebarItemProps> = ({ isOpen }) => {
               viewBox="0 0 24 24"
               fill="currentColor"
               className="size-8"
-              width="20"               
+              width="20"
               height="20"
             >
               <path d="M11.7 2.805a.75.75 0 0 1 .6 0A60.65 60.65 0 0 1 22.83 8.72a.75.75 0 0 1-.231 1.337 49.948 49.948 0 0 0-9.902 3.912l-.003.002c-.114.06-.227.119-.34.18a.75.75 0 0 1-.707 0A50.88 50.88 0 0 0 7.5 12.173v-.224c0-.131.067-.248.172-.311a54.615 54.615 0 0 1 4.653-2.52.75.75 0 0 0-.65-1.352 56.123 56.123 0 0 0-4.78 2.589 1.858 1.858 0 0 0-.859 1.228 49.803 49.803 0 0 0-4.634-1.527.75.75 0 0 1-.231-1.337A60.653 60.653 0 0 1 11.7 2.805Z" />
@@ -993,6 +996,70 @@ const SidebarItem: React.FC<SidebarItemProps> = ({ isOpen }) => {
               <>
                 <div>
                   <p className="text-base capitalize">Academy</p>
+                </div>
+                <div className="ml-auto "></div>
+              </>
+            ) : null}
+          </div>
+        </div>
+      </Link>
+      {/*file-manager */}
+
+      <Link href={"/dashboard/file-manager"} className="w-full">
+        <div
+          className={`${
+            isOpen === false
+              ? active === "file-manager" ||
+                pathname === "/dashboard/file-manager" ||
+                pathname.includes("file-manager")
+                ? "bg-200"
+                : ""
+              : active === "file-manager" ||
+                pathname === "/dashboard/file-manager" ||
+                pathname.includes("file-manager")
+              ? "bg-200"
+              : ""
+          } gap-4 cursor-pointer  p-3 mt-2 text-white   rounded-xl hover:bg-200`}
+          onClick={() => {
+            setActive("file-manager"),
+              setToggle(false),
+              setToggleProfile(false),
+              setToggleInvoice(false),
+              setToggleAuth(false),
+              setToggleError(false),
+              setToggleHelp(false),
+              setToggleIcon(false);
+          }}
+        >
+          <div
+            className={
+              isOpen === false
+                ? "flex justify-center items-center hover:bg-200 rounded-lg"
+                : `flex items-center justify-between gap-2`
+            }
+          >
+            {/* <Image src={Academy} alt={"academy"} /> */}
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth={1.5}
+              stroke="currentColor"
+              className="size-6"
+              width={20}
+              height={20}
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M2.25 15a4.5 4.5 0 0 0 4.5 4.5H18a3.75 3.75 0 0 0 1.332-7.257 3 3 0 0 0-3.758-3.848 5.25 5.25 0 0 0-10.233 2.33A4.502 4.502 0 0 0 2.25 15Z"
+              />
+            </svg>
+
+            {isOpen ? (
+              <>
+                <div>
+                  <p className="text-base capitalize">File Manager</p>
                 </div>
                 <div className="ml-auto "></div>
               </>
