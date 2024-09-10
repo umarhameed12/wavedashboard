@@ -20,4 +20,11 @@ export const FinanceData = [
     amount: "$100.00",
     status: "Pending",
   },
+  {
+    transcationId: "361402213NT",
+    date: "Nov 24, 2019",
+    name: "Maura Carey",
+    amount: "-$927.43",
+    status: "Completed",
+  },
 ];

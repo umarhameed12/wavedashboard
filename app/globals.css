@@ -142,3 +142,9 @@
   min-height: 52px;
   border-bottom: 1px solid rgb(81, 81, 81);
 }
+
+@media (max-width: 409px) {
+  .check {
+    top: 8rem;
+  }
+}
