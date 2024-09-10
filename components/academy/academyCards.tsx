@@ -153,7 +153,7 @@ const AcademyCards = () => {
      
       <Label label="Category"/>
       <select
-        className="block w-full p-5  border outline-none dark:text-black  bg-slate-50 border-gray-300 rounded-md  px-4 py-2 text-sm focus:border-blue-500 focus:ring-blue-500"
+        className="block w-full p-5  border outline-none dark:border-gray-800 dark:bg-dark dark:text-white  bg-slate-50 border-gray-300 rounded-md  px-4 py-2 text-sm focus:border-blue-500 focus:ring-blue-500"
         name="category"
         id="category"
         onChange={handleCategoryChange}
@@ -175,7 +175,7 @@ const AcademyCards = () => {
         type="text"
         id="keyword"
         placeholder="Enter a keyword..."
-        className="block sm:w-64 w-full  border border-gray-300 dark:text-black  outline-none bg-slate-50 rounded-md px-4 py-2 text-sm focus:border-blue-500 focus:ring-blue-500"
+        className="block sm:w-64 w-full dark:border-gray-800 dark:bg-dark dark:text-white  border border-gray-300   outline-none bg-slate-50 rounded-md px-4 py-2 text-sm focus:border-blue-500 focus:ring-blue-500"
       />
     </div>
 
@@ -191,7 +191,7 @@ const AcademyCards = () => {
             />
             <div
               className={`w-10 h-5 flex items-center rounded-full transition-colors duration-300 ${
-                isToggled ? 'bg-sky-500' : 'bg-gray-300'
+                isToggled ? 'bg-sky-500' : 'bg-gray-300 '
               }`}
               onClick={handleToggle}
             >

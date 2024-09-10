@@ -71,7 +71,7 @@ export default function Sidebar() {
             >
               Management
             </h1> */}
-            <div className="max-h-[83vh] overflow-y-scroll no-scrollbar ">
+            <div className="max-h-[95vh] overflow-y-scroll no-scrollbar ">
               <SidebarItem isOpen={isOpen} />
             </div>
           </div>

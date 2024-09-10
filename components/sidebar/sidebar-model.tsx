@@ -30,7 +30,7 @@ export default function SidebarModel({
       className="p-4 bg-primary dark:bg-dark z-[9999999999999999999999999999999999999999999999999] "
       style={{ zIndex: "9999" }}
     >
-      <div className="justify-start  px-10w-full flex items-center py-2 mb-5 relative">
+      <div className="justify-start  px-10 w-full flex items-center py-2 mb-5 relative">
         <div
           className="flex justify-between items-center w-full"
           onClick={setIsOpen}

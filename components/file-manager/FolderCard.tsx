@@ -46,13 +46,12 @@ const FolderCard = () => {
             Folders
           </Typography>
 
-          <div className="grid gap-4 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-3">
+          <div className="grid gap-4 sm:grid-cols-1 md:grid-cols-2  lg:grid-cols-3">
             {folderData.map((folder, index) => (
               <Card
                 key={index}
                 sx={{
-                  width: "180px",
-                  height: "140px",
+                 
                   display: "flex",
                   flexDirection: "column",
                   justifyContent: "center",
@@ -62,7 +61,7 @@ const FolderCard = () => {
                   position: "relative",
                   boxShadow: "0 2px 4px rgba(0, 0, 0, 0.1)",    
                 }}
-               className="dark:bg-dark"
+               className="dark:bg-dark w-[160px] h-[160px] "
               >
                 <CardContent>
                   <div
