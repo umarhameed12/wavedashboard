@@ -73,6 +73,12 @@ const FinanceGraph: React.FC = () => {
                 grid: {
                   display: false
                 },
+                ticks: {
+                  display: false,
+                },
+                border: {
+                  display: false,
+                }
               },
               y: {
                 beginAtZero: true,
@@ -81,10 +87,9 @@ const FinanceGraph: React.FC = () => {
                 },
                 ticks: {
                     display: false,
-                  color: 'rgba(0, 0, 0, 0.6)',
-                  callback: function(value) {
-                    return '$' + value + 'k';
-                  }
+                },
+                border: {
+                  display: false,
                 }
               }
             },
@@ -92,9 +97,6 @@ const FinanceGraph: React.FC = () => {
               point: {
                 radius: 0
               },
-              line: {
-                borderJoinStyle: 'round'
-              }
             },
             interaction: {
               intersect: false,
