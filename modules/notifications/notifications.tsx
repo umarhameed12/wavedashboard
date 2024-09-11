@@ -4,7 +4,7 @@ import React from "react";
 
 const Notifications = () => {
   return (
-    <div className="m-4 pt-4">
+    <div className="pt-4 container max-w-[1120px] m-auto sm:px-10 px-5">
       <div className="flex justify-between items-center flex-wrap">
         <div className="space-y-1">
           <h1 className="font-bold text-xl">Notifications</h1>
@@ -32,6 +32,27 @@ const Notifications = () => {
         </div>
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 items-center gap-4 flex-wrap">
+        <NotificationsCard
+          icon={
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              className="w-6 h-6"
+            >
+              <path
+                fillRule="evenodd"
+                d="M12.963 2.286a.75.75 0 0 0-1.071-.136 9.742 9.742 0 0 0-3.539 6.176 7.547 7.547 0 0 1-1.705-1.715.75.75 0 0 0-1.152-.082A9 9 0 1 0 15.68 4.534a7.46 7.46 0 0 1-2.717-2.248ZM15.75 14.25a3.75 3.75 0 1 1-7.313-1.172c.628.465 1.35.81 2.133 1a5.99 5.99 0 0 1 1.925-3.546 3.75 3.75 0 0 1 3.255 3.718Z"
+                clipRule="evenodd"
+              />
+            </svg>
+          }
+          title="Daily challenges"
+          para="Your submission has been accepted"
+          background="bg-[#0078D7]"
+          color="text-white"
+          background1="bg-[#005496]"
+        />
         <NotificationsCard
           icon={
             <svg

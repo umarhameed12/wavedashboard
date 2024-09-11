@@ -47,7 +47,20 @@ export default function TaskCard({
       <div className="bg-white dark:bg-dark p-4 rounded-t-lg ">
         <div className="flex bg-white dark:bg-dark items-center justify-between  ">
           <p className={`${color} px-8 py-2 text-black rounded-full`}>{type}</p>
-          <Image src={dots} alt="" className="" />
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth={1.5}
+            stroke="currentColor"
+            className="w-6 h-6 text-gray-800 dark:text-white"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M12 6.75a.75.75 0 1 1 0-1.5.75.75 0 0 1 0 1.5ZM12 12.75a.75.75 0 1 1 0-1.5.75.75 0 0 1 0 1.5ZM12 18.75a.75.75 0 1 1 0-1.5.75.75 0 0 1 0 1.5Z"
+            />
+          </svg>
         </div>
         <div className="p-4 space-y-4">
           <span>{title}</span>
@@ -62,11 +75,20 @@ export default function TaskCard({
         </div>
         <div className="flex gap-8 ">
           <Link href={""} className="flex gap-2 justify-center items-center">
-            <Image
-              src={theme == "dark" ? ChatLight : ChatDark}
-              alt=""
-              className="w-30"
-            />
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth={1.5}
+              stroke="currentColor"
+              className="w-6 h-6 text-gray-800 dark:text-white"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M12 6.75a.75.75 0 1 1 0-1.5.75.75 0 0 1 0 1.5ZM12 12.75a.75.75 0 1 1 0-1.5.75.75 0 0 1 0 1.5ZM12 18.75a.75.75 0 1 1 0-1.5.75.75 0 0 1 0 1.5Z"
+              />
+            </svg>
             6
           </Link>
           <Link href={""} className="flex gap-2 justify-center items-center">
