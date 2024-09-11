@@ -3,7 +3,7 @@ import Button from "../buttons/button";
 
 const FileHeader = () => {
   return (
-    <div className=" container  py-5 p-8  sm:py-20 w-full flex space-y-8 sm:space-y-0 items-center justify-between ">
+    <div className="py-5 sm:py-[3.2rem] w-full flex space-y-8 sm:space-y-0 items-center justify-between ">
       <div className="flex flex-col space-y-3 sm:space-y-0">
         <nav className="block" aria-label="Breadcrumb">
           <ol className="inline-flex items-center space-x-1 md:space-3">
