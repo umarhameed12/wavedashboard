@@ -279,6 +279,16 @@ const Finance = () => {
         <div>
           <FinanceBudget />
         </div>
+        <div className="">
+          <p className="text-base  font-normal text-[#5F6368] ">Exceeded your personal limit! Be careful next month.</p>
+        </div>
+        <div className="">
+        <Button className="flex items-center dark:bg-transparent dark:border-white  border border-gray-800 gap-2 bg-100 py-[9px] px-[12px]">
+           
+
+            <p className="font-medium dark:text-white text-sm text-black">Download Summary</p>
+          </Button>
+        </div>
       </div>
     </div>
   );

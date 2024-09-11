@@ -50,12 +50,14 @@ const FileCards = () => {
         <div className="flex-grow">
           <h2 className=" dark:text-white text-xl font-bold mb-4">Files</h2>
           <div
-            className={`grid grid-cols-1 xl:grid-cols-${selectedFile ? "3" : "5"} md:grid-cols-3 lg:grid-cols-3 p-3 gap-4`}
+            className={`grid sm:grid-cols-2 grid-cols-1 ${
+              selectedFile ? "xl:grid-cols-3" : "xl:grid-cols-5"
+            } md:grid-cols-3 lg:grid-cols-3 p-3 gap-4`}
           >
             {files.map((file, index) => (
               <div
                 key={index}
-                className="border sm:w-[160px] w-full bg-[#FAF9F9] dark:bg-dark dark:border-gray-800  m-3 p-10 shadow rounded-xl cursor-pointer hover:shadow-md transition-shadow"
+                className="border sm:w-[160px] w-full bg-[#FAF9F9] dark:bg-dark dark:border-gray-800  p-10 shadow rounded-xl cursor-pointer hover:shadow-md transition-shadow"
                 onClick={() => setSelectedFile(file)}
               >
                 <div className="text-3xl mb-2 text-center">
@@ -143,7 +145,7 @@ const FileCards = () => {
               <button className="rounded-lg bg-200 text-white sm:px-7 p-2 flex items-center justify-center cursor-pointer">
                 Download
               </button>
-              <button className="rounded-lg bg-100 text-black sm:px-7 p-2 flex items-center justify-center cursor-pointer">
+              <button className="rounded-lg dark:text-white bg-100  dark:bg-transparent dark:border-white  border border-gray-800 text-black sm:px-7 p-2 flex items-center justify-center cursor-pointer">
                 Delete
               </button>
             </div>
