@@ -3,7 +3,7 @@ import React from "react";
 
 const ContactHeader = () => {
   return (
-    <div className="w-full bg-slate-100 border-t-2 p-8 space-y-3">
+    <div className="w-full bg-slate-100 dark:bg-dark border-t-2 dark:border-[#4F4F4F80] p-8 space-y-3">
       <div>
         <div className="flex flex-col space-y-3 sm:space-y-0">
           <nav className="block" aria-label="Breadcrumb">

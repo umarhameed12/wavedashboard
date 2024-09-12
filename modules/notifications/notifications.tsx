@@ -1,18 +1,32 @@
+"use client";
 import NotificationsCard from "@/components/notifications/notifications-card";
+import { Button } from "@material-tailwind/react";
+import Link from "next/link";
 import { title } from "process";
 import React from "react";
 
 const Notifications = () => {
   return (
-    <div className="pt-4 container max-w-[1120px] m-auto sm:px-10 px-5">
+    <div className="mt-8 container max-w-[1120px] m-auto sm:px-10 px-5">
       <div className="flex justify-between items-center flex-wrap">
         <div className="space-y-1">
-          <h1 className="font-bold text-xl">Notifications</h1>
+          <div className="flex gap-2 text-sm">
+            <Link href="/dashboard" className="text-[#0A74DA]">
+              Home
+            </Link>
+            <p>/</p>
+            <Link href="/dashboard/notifications" className="text-[#0A74DA]">
+              Notification
+            </Link>
+          </div>
+          <h1 className="font-extrabold text-2xl">Notifications</h1>
           <p className="text-sm font-normal">Lists all notifications</p>
         </div>
         <div className="flex items-center flex-wrap gap-4">
-          <p className="text-base font-medium">Example notifications</p>
-          <button className="bg-200 p-2 rounded-full flex items-center gap-2 px-4">
+          <Button className="hover:bg-[#00418A] bg-[#0A74DA] text-white rounded-xl p-3 font-medium">
+            Example notification
+          </Button>
+          <Button className="bg-[#00A4EF] hover:bg-[#0078D7] p-2 rounded-xl flex items-center gap-2 px-4">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -28,10 +42,10 @@ const Notifications = () => {
               />
             </svg>
             <p className="text-sm text-white font-normal ">Dissmiss All</p>
-          </button>
+          </Button>
         </div>
       </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 items-center gap-4 flex-wrap">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 items-center gap-x-4 flex-wrap mt-5">
         <NotificationsCard
           icon={
             <svg

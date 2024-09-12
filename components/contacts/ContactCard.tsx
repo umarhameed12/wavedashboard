@@ -20,9 +20,9 @@ import {
   LocationOn as LocationIcon,
   Cake as CakeIcon,
   Close as CloseIcon,
- 
 } from "@mui/icons-material";
 import React, { useState } from "react";
+import { useTheme } from "next-themes";
 
 interface Contact {
   id: number;
@@ -533,45 +533,49 @@ const ContactCard: React.FC = () => {
       bio: "Ea enim exercitation lorem excepteur officia nulla culpa culpa nisi veniam quis non duis exercitation labore commodo et occaecat reprehenderit ex velit exercitation commodo cupidatat amet veniam mollit magna consectetur. Voluptate consectetur eu id elusmod anim reprehenderit incididunt duis veniam tempor culpa ea esse tempor do laborum dolore sint ea duis incididunt in do aliqua exercitation officia deserunt.",
       coverImage: "/api/placeholder/800/200",
     },
+
     // Add more contacts here...
   ];
+  const theme = useTheme();
   return (
     <div className=" mt-5 ">
       <Box sx={{ bgcolor: "background.paper" }}>
         <List
           sx={{}}
-          className=" max-h-[95vh] overflow-y-scroll no-scrollbar p-2 bg-gray-100 rounded-lg"
+          className=" max-h-[95vh] overflow-y-scroll no-scrollbar p-2 bg-gray-100 dark:bg-dark"
         >
           {contacts.map((contact) => (
             <ListItem
               key={contact.id}
               component="div"
               onClick={() => handleContactClick(contact)}
-              className="border-b-2  border-gray-300"
+              className="border-b-2  border-gray-300 dark:border-[#4F4F4F80]"
             >
               <ListItemAvatar>
                 <Avatar alt={contact.name} src={contact.avatar} />
               </ListItemAvatar>
-              <ListItemText
-                className=" w-full  text-sm text-gray-600 "
-                primary={contact.name}
-                secondary={contact.title}
-              />
+              <div>
+                <ListItemText
+                  className=" w-full text-sm text-gray-600 dark:text-white"
+                  primary={contact.name}
+                />
+                <p className="text-[#B0BEC5]">{contact.title}</p>
+              </div>
             </ListItem>
           ))}
         </List>
-           {/* drawer  */}
+        {/* drawer  */}
         <Drawer anchor="right" open={isDrawerOpen} onClose={handleDrawerClose}>
           <Box
             sx={{
               width: "100%",
               maxWidth: { xs: "100%", sm: "600px" }, // Apply max-width based on breakpoints
-               // Padding
+              // Padding
             }}
           >
             {selectedContact && (
               <>
-                <Box sx={{ position: "relative", mb: -5, padding:0 }}>
+                <Box sx={{ position: "relative", mb: -5, padding: 0 }}>
                   <img
                     src={selectedContact.coverImage}
                     alt="Cover"
@@ -661,11 +665,10 @@ const ContactCard: React.FC = () => {
                 >
                   {/* Title */}
                   <Box sx={{ display: "flex", alignItems: "center", mt: 1 }}>
-                     {/* <BusinessCenterOutlinedIcon/> */}
-                  <Typography variant="subtitle1" gutterBottom>
-                    {selectedContact.title}
-                  </Typography>
-
+                    {/* <BusinessCenterOutlinedIcon/> */}
+                    <Typography variant="subtitle1" gutterBottom>
+                      {selectedContact.title}
+                    </Typography>
                   </Box>
 
                   {/* Email Section */}

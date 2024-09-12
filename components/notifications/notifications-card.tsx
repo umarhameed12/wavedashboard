@@ -17,7 +17,7 @@ const NotificationsCard = ({
 }: CardProps) => {
   return (
     <div
-      className={`relative my-4 p-8 rounded-xl flex items-center gap-4 ${
+      className={`relative my-2 p-8 rounded-xl flex items-center gap-4 ${
         background ? background : "bg-white dark:bg-dark"
       } ${color ? color : "text-black dark:text-white"}`}
     >

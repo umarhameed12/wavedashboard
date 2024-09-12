@@ -73,14 +73,26 @@ const SidebarItem: React.FC<SidebarItemProps> = ({ isOpen }) => {
       case "/dashboard/customers":
         setActive("customers");
         break;
+      case "/dashboard/customers/addcustomer":
+        setActive("customers");
+        break;
       case "/dashboard/products":
+        setActive("products");
+        break;
+      case "/dashboard/products/addproducts":
         setActive("products");
         break;
       case "/dashboard/orders":
         setActive("orders");
         break;
-      case "/dashboard/invoices" || "/dashboard/invoices/printable":
+      case "/dashboard/orders/neworder":
+        setActive("orders");
+        break;
+      case "/dashboard/invoices":
         setActive("invoices");
+        break;
+      case "/dashboard/invoices/printable":
+        setActive("printable");
         break;
       case "/dashboard/emails":
         setActive("emails");
@@ -123,6 +135,9 @@ const SidebarItem: React.FC<SidebarItemProps> = ({ isOpen }) => {
         break;
       case "/dashboard/cards":
         setActive("Cards");
+        break;
+      case "/dashboard/contacts":
+        setActive("contacts");
         break;
 
       default:
@@ -1059,6 +1074,65 @@ const SidebarItem: React.FC<SidebarItemProps> = ({ isOpen }) => {
               <>
                 <div>
                   <p className="text-base capitalize">File Manager</p>
+                </div>
+                <div className="ml-auto "></div>
+              </>
+            ) : null}
+          </div>
+        </div>
+      </Link>
+      <Link href={"/dashboard/contacts"} className="w-full">
+        <div
+          className={`${
+            isOpen === false
+              ? active === "contacts" ||
+                pathname === "/dashboard/contacts" ||
+                pathname.includes("contacts")
+                ? "bg-200"
+                : ""
+              : active === "contacts" ||
+                pathname === "/dashboard/contacts" ||
+                pathname.includes("contacts")
+              ? "bg-200"
+              : ""
+          } gap-4 cursor-pointer  p-3 mt-2 text-white   rounded-xl hover:bg-200`}
+          onClick={() => {
+            setActive("contacts"),
+              setToggle(false),
+              setToggleProfile(false),
+              setToggleInvoice(false),
+              setToggleAuth(false),
+              setToggleError(false),
+              setToggleHelp(false),
+              setToggleIcon(false);
+          }}
+        >
+          <div
+            className={
+              isOpen === false
+                ? "flex justify-center items-center hover:bg-200 rounded-lg"
+                : `flex items-center justify-between gap-2`
+            }
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth={1.5}
+              stroke="currentColor"
+              className="w-6 h-6"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M18 18.72a9.094 9.094 0 0 0 3.741-.479 3 3 0 0 0-4.682-2.72m.94 3.198.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0 1 12 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 0 1 6 18.719m12 0a5.971 5.971 0 0 0-.941-3.197m0 0A5.995 5.995 0 0 0 12 12.75a5.995 5.995 0 0 0-5.058 2.772m0 0a3 3 0 0 0-4.681 2.72 8.986 8.986 0 0 0 3.74.477m.94-3.197a5.971 5.971 0 0 0-.94 3.197M15 6.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm6 3a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Zm-13.5 0a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Z"
+              />
+            </svg>
+
+            {isOpen ? (
+              <>
+                <div>
+                  <p className="text-base capitalize">Contacts</p>
                 </div>
                 <div className="ml-auto "></div>
               </>
