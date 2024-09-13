@@ -536,7 +536,8 @@ const ContactCard: React.FC = () => {
 
     // Add more contacts here...
   ];
-  const theme = useTheme();
+  const { theme, systemTheme } = useTheme();
+  const currentTheme = theme === "system" ? systemTheme : theme;
   return (
     <div className=" mt-5 ">
       <Box sx={{ bgcolor: "background.paper" }}>
@@ -570,7 +571,8 @@ const ContactCard: React.FC = () => {
             sx={{
               width: "100%",
               maxWidth: { xs: "100%", sm: "600px" }, // Apply max-width based on breakpoints
-              // Padding
+              backgroundColor: currentTheme === "dark" ? "black" : "white",
+              color: currentTheme === "dark" ? "white" : "black",
             }}
           >
             {selectedContact && (

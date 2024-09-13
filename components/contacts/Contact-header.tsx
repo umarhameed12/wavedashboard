@@ -37,7 +37,7 @@ const ContactHeader = () => {
           viewBox="0 0 24 24"
           strokeWidth={1.5}
           stroke="currentColor"
-          className=" w-5 h-5 absolute left-3 top-2 text-[#0000008A]"
+          className=" w-5 h-5 absolute left-3 top-2 dark:text-white text-[#0000008A]"
         >
           <path
             strokeLinecap="round"
