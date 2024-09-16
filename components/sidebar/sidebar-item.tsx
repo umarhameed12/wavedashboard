@@ -139,6 +139,9 @@ const SidebarItem: React.FC<SidebarItemProps> = ({ isOpen }) => {
       case "/dashboard/contacts":
         setActive("contacts");
         break;
+      case "/dashboard/product-detail":
+        setActive("product-detail");
+        break;
       case "/dashboard/setting":
         setActive("setting");
         break;
@@ -722,6 +725,47 @@ const SidebarItem: React.FC<SidebarItemProps> = ({ isOpen }) => {
               <>
                 <div>
                   <p className="text-base capitalize">Products</p>
+                </div>
+                <div className="ml-auto"></div>
+              </>
+            ) : null}
+          </div>
+        </div>
+      </Link>
+      <Link href={"/dashboard/product-detail"} className="w-full">
+        <div
+          className={`${
+            isOpen === false
+              ? active === "product-detail" || pathname === "/dashboard/product-detail"
+                ? "bg-200"
+                : ""
+              : active === "product-detail" || pathname === "/dashboard/product-detail"
+              ? "bg-200"
+              : ""
+          } gap-4 cursor-pointer  p-3 mt-2 text-white   rounded-xl hover:bg-200`}
+          onClick={() => {
+            setActive("product-detail"),
+              setToggle(false),
+              setToggleProfile(false),
+              setToggleInvoice(false),
+              setToggleAuth(false),
+              setToggleError(false),
+              setToggleHelp(false),
+              setToggleIcon(false);
+          }}
+        >
+          <div
+            className={
+              isOpen === false
+                ? "flex justify-center items-center hover:bg-200 rounded-lg"
+                : `flex items-center justify-between gap-2`
+            }
+          >
+            <Image src={Products} alt={"Products"} />
+            {isOpen ? (
+              <>
+                <div>
+                  <p className="text-base capitalize">Product-Detail</p>
                 </div>
                 <div className="ml-auto"></div>
               </>
