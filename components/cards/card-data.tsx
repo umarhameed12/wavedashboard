@@ -21,7 +21,7 @@ import Label from "../forms/label";
 export const c1 = (
   <>
     <div className=" rounded-l p-4 h-3/5"></div>
-    <div className="bg-white dark:bg-button p-4   space-y-4 h-2/5">
+    <div className="bg-white dark:bg-button p-4 space-y-4 h-fit">
       <p>
         Some quick example text to build on the card title and make up the bulk
         of the card's content.
@@ -43,7 +43,7 @@ export const c1Code = `
 export const c2 = (
   <>
     <div className=" rounded-l p-4  h-2/5"></div>
-    <div className="bg-white dark:bg-button p-4  h-3/5  space-y-4 ">
+    <div className="bg-white dark:bg-button p-4  h-fit  space-y-4 ">
       <h3>profile</h3>
       <p>
         Some quick example text to build on the card title and make up the bulk
@@ -77,9 +77,9 @@ export const c2Code = `   <div className=" rounded-l p-4  h-2/5"></div>
 export const c3 = (
   <>
     <div className=" rounded-l p-4 h-2/3"></div>
-    <div className="bg-white dark:bg-button p-4   space-y-4 h-2/5">
+    <div className="bg-white dark:bg-button p-4 space-y-4 h-fit">
       <h2>Puzzles Coffee Shop</h2>
-      <div className="flex items-center gap-2">
+      <div className="flex items-center gap-2 flex-wrap">
         <div className="flex items-center gap-2">
           <Image src={Star} alt="star" />
           <Image src={Star} alt="star" />
@@ -119,7 +119,7 @@ export const c3Code = `
 export const c4 = (
   <>
     <div className=" rounded-l p-4 h-3/5"></div>
-    <div className="bg-white dark:bg-button p-4   space-y-4 h-2/5">
+    <div className="bg-white dark:bg-button p-4   space-y-4 h-fit">
       <p>
         Some quick example text to build on the card title and make up the bulk
         of the card's content.
@@ -150,8 +150,8 @@ export const c4Code = `
 // shoping card
 export const cardShopping1 = (
   <>
-    <div className=" rounded-l p-4 w-3/5"></div>
-    <div className="bg-white dark:bg-button p-8  w-2/5  space-y-4">
+    <div className=" rounded-l p-4 w-1/4 sm:w-3/5"></div>
+    <div className="bg-white dark:bg-button p-8 w-full sm:w-2/5  space-y-4">
       <Image src={WaveLogo} alt="" />
       <h2>Puzzles Coffee Shop</h2>
       <p>
@@ -176,9 +176,9 @@ export const cardShopping1Code = `
     `;
 export const cardShopping2 = (
   <>
-    <div className=" rounded-l p-4 w-1/2"></div>
+    <div className=" rounded-l p-4 w-1/4 sm:w-1/2"></div>
 
-    <div className="bg-white dark:bg-button p-4  w-1/2  space-y-4">
+    <div className="bg-white dark:bg-button p-4 w-full sm:w-1/2  space-y-4">
       <Label label="Fullname" />
       <div className="bg-neutral-100 flex gap-2 p-3  rounded-lg dark:bg-dark200">
         {/* <Image src={theme === "dark" ? userDark : user} alt="leaf" /> */}

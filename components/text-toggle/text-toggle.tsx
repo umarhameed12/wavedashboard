@@ -22,10 +22,14 @@ export default function TextToggle({ title, para }: TextToggle) {
 
   return (
     <div
-      className="p-3 my-4 bg-white dark:bg-dark rounded-lg cursor-pointer"
+      className="my-4 bg-white dark:bg-dark rounded-lg cursor-pointer"
       onClick={toggleHandler}
     >
-      <div className="mb-4 flex justify-between items-center ">
+      <div
+        className={`flex justify-between items-center p-3 ${
+          toggle && "bg-[#F0F6FF] dark:bg-[#4584FF14] p-3 rounded-t-lg"
+        }`}
+      >
         <h2
           className={`${
             toggle && "text-blue-500"
@@ -59,7 +63,9 @@ export default function TextToggle({ title, para }: TextToggle) {
         )}
       </div>
       {toggle ? (
-        <p className="text-justify sm:text-base xs:text-xs">{para}</p>
+        <div className="p-3">
+          <p className="text-justify sm:text-base xs:text-xs">{para}</p>
+        </div>
       ) : null}
     </div>
   );

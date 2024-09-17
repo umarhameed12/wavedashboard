@@ -5,7 +5,8 @@ import {
   createFilterOptions,
   TextField,
 } from "@mui/material";
-import React, { useState } from "react";
+import { useTheme } from "next-themes";
+import React, { useState, useEffect } from "react";
 
 interface TagOption {
   inputValue?: string;
@@ -56,8 +57,23 @@ const BasicInfo = () => {
     }
   };
 
+  const { theme, systemTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+
+  // Ensure the component is mounted before accessing the theme
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) {
+    return null;
+  }
+
+  const currentTheme = theme === "system" ? systemTheme : theme;
+  const isDarkMode = currentTheme === "dark";
+
   return (
-    <div className="w-3/4">
+    <div className={`lg:w-3/4 w-full`}>
       <div className="space-y-5">
         <TextField
           required
@@ -66,6 +82,30 @@ const BasicInfo = () => {
           defaultValue="A Walk Amongst Friends - Canvas Print"
           className="w-full"
           size="small"
+          InputProps={{
+            style: {
+              color: isDarkMode ? "white" : "black",
+              borderColor: isDarkMode ? "gray" : "black",
+            },
+          }}
+          InputLabelProps={{
+            style: {
+              color: isDarkMode ? "gray" : "black",
+            },
+          }}
+          sx={{
+            "& .MuiOutlinedInput-root": {
+              "& fieldset": {
+                borderColor: isDarkMode ? "gray" : "black",
+              },
+              "&:hover fieldset": {
+                borderColor: isDarkMode ? "white" : "black",
+              },
+              "&.Mui-focused fieldset": {
+                borderColor: isDarkMode ? "white" : "black",
+              },
+            },
+          }}
         />
         <TextField
           id="description-input"
@@ -74,6 +114,30 @@ const BasicInfo = () => {
           rows={4}
           fullWidth
           defaultValue="Officia amet eiusmod eu sunt tempor voluptate laboris velit nisi amet enim proident et. Consequat laborum non eiusmod cillum eu exercitation. Qui adipisicing est fugiat eiusmod esse. Sint aliqua cupidatat pariatur mollit ad est proident reprehenderit. Eiusmod adipisicing laborum incididunt sit aliqua ullamco."
+          InputProps={{
+            style: {
+              color: isDarkMode ? "white" : "black",
+              borderColor: isDarkMode ? "gray" : "black",
+            },
+          }}
+          InputLabelProps={{
+            style: {
+              color: isDarkMode ? "gray" : "black",
+            },
+          }}
+          sx={{
+            "& .MuiOutlinedInput-root": {
+              "& fieldset": {
+                borderColor: isDarkMode ? "gray" : "black",
+              },
+              "&:hover fieldset": {
+                borderColor: isDarkMode ? "white" : "black",
+              },
+              "&.Mui-focused fieldset": {
+                borderColor: isDarkMode ? "white" : "black",
+              },
+            },
+          }}
         />
         {/* Autocomplete for Categories */}
         <Autocomplete
@@ -117,6 +181,30 @@ const BasicInfo = () => {
               variant="outlined"
               fullWidth
               size="small"
+              InputProps={{
+                style: {
+                  color: isDarkMode ? "white" : "black",
+                  borderColor: isDarkMode ? "gray" : "black",
+                },
+              }}
+              InputLabelProps={{
+                style: {
+                  color: isDarkMode ? "gray" : "black",
+                },
+              }}
+              sx={{
+                "& .MuiOutlinedInput-root": {
+                  "& fieldset": {
+                    borderColor: isDarkMode ? "gray" : "black",
+                  },
+                  "&:hover fieldset": {
+                    borderColor: isDarkMode ? "white" : "black",
+                  },
+                  "&.Mui-focused fieldset": {
+                    borderColor: isDarkMode ? "white" : "black",
+                  },
+                },
+              }}
             />
           )}
           renderTags={(tagValue, getTagProps) =>
@@ -172,6 +260,30 @@ const BasicInfo = () => {
               variant="outlined"
               fullWidth
               size="small"
+              InputProps={{
+                style: {
+                  color: isDarkMode ? "white" : "black",
+                  borderColor: isDarkMode ? "gray" : "black",
+                },
+              }}
+              InputLabelProps={{
+                style: {
+                  color: isDarkMode ? "gray" : "black",
+                },
+              }}
+              sx={{
+                "& .MuiOutlinedInput-root": {
+                  "& fieldset": {
+                    borderColor: isDarkMode ? "gray" : "black",
+                  },
+                  "&:hover fieldset": {
+                    borderColor: isDarkMode ? "white" : "black",
+                  },
+                  "&.Mui-focused fieldset": {
+                    borderColor: isDarkMode ? "white" : "black",
+                  },
+                },
+              }}
             />
           )}
           renderTags={(tagValue, getTagProps) =>

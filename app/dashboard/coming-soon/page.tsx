@@ -53,7 +53,7 @@ const page = () => {
             onChange={(e) => setEmail(e.target.value)}
           />
           <button
-            className="rounded-full text-white p-2 bg-200"
+            className="rounded-lg text-white p-2 bg-200 w-[70%]"
             disabled={!email}
           >
             Notify me when you lunch

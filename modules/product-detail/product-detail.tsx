@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import React, { useState } from "react";
 
 import LakeImg from "@/assets/product-detail/braies-lake.jpg";
 import { Button } from "@material-tailwind/react";
@@ -10,6 +10,8 @@ import BasicInfo from "@/components/product-detail/basic-info";
 import Pricing from "@/components/product-detail/pricing";
 import Inventory from "@/components/product-detail/inventory";
 import Shipping from "@/components/product-detail/shipping";
+import ProductImages from "@/components/product-detail/product-images";
+import { useTheme } from "next-themes";
 
 interface TabPanelProps {
   children?: React.ReactNode;
@@ -66,26 +68,39 @@ function a11yProps(index: number): Omit<TabProps, "label"> {
   };
 }
 
+interface ImageInfo {
+  id: string;
+  url: string;
+}
+
 const ProductDetail = () => {
   const [value, setValue] = React.useState(0);
+  const [selectedImage, setSelectedImage] = useState<ImageInfo | null>(null);
 
   const handleChange = (event: React.SyntheticEvent, newValue: number) => {
     setValue(newValue);
   };
+
+  const handleImageSelect = (image: ImageInfo) => {
+    setSelectedImage(image);
+  };
+
   return (
-    <div className="py-10 container m-auto max-w-[1000px] space-y-3">
+    <div className="p-10 space-y-3">
       <div className="flex gap-3 text-blue-600 text-sm font-medium">
         <Link href="/dashboard">Home</Link>
         <p>/</p>
         <Link href="/dashboard/product-detail">Product-Detail</Link>
       </div>
-      <div className="flex justify-between items-center">
+      <div className="flex justify-between items-center flex-wrap space-y-3">
         <div className="flex items-center gap-3">
-          <div>
+          <div className="md:block hidden">
             <Image
-              src={LakeImg}
-              alt="lakeimg"
-              className="w-[3.5rem] rounded-lg"
+              src={selectedImage ? selectedImage.url : LakeImg}
+              alt="product image"
+              width={56}
+              height={56}
+              className="w-[3.5rem] h-[3.5rem] rounded-lg object-cover"
             />
           </div>
           <div>
@@ -118,26 +133,28 @@ const ProductDetail = () => {
           </Button>
         </div>
       </div>
-      <div className="bg-white rounded-xl p-4">
+      <div className="bg-white dark:bg-dark rounded-xl p-2 sm:p-4">
         <Box sx={{ width: "100%" }}>
           <Box>
             <StyledTabs
               value={value}
               onChange={handleChange}
-              aria-label="styled tabs example"
+              variant="scrollable"
+              scrollButtons={false}
+              aria-label="styled tabs example"              
             >
-              <StyledTab label="Basic Info" {...a11yProps(0)} />
-              <StyledTab label="Product Images" {...a11yProps(1)} />
-              <StyledTab label="Pricing" {...a11yProps(2)} />
-              <StyledTab label="Inventory" {...a11yProps(3)} />
-              <StyledTab label="Shipping" {...a11yProps(4)} />
+              <StyledTab label="Basic Info" className="text-black dark:text-white" {...a11yProps(0)} />
+              <StyledTab label="Product Images" className="text-black dark:text-white" {...a11yProps(1)} />
+              <StyledTab label="Pricing" className="text-black dark:text-white" {...a11yProps(2)} />
+              <StyledTab label="Inventory" className="text-black dark:text-white" {...a11yProps(3)} />
+              <StyledTab label="Shipping" className="text-black dark:text-white" {...a11yProps(4)} />
             </StyledTabs>
           </Box>
           <CustomTabPanel value={value} index={0}>
             <BasicInfo />
           </CustomTabPanel>
           <CustomTabPanel value={value} index={1}>
-            Item Two
+            <ProductImages onImageSelect={handleImageSelect} />
           </CustomTabPanel>
           <CustomTabPanel value={value} index={2}>
             <Pricing />

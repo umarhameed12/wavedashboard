@@ -65,7 +65,7 @@ export default function AllCards() {
   return (
     <div className="m-4">
       <div className="bg-white dark:bg-dark rounded-lg p-4">
-        <div className="flex lg:flex-row xs:flex-col justify-center items-center gap-4">
+        <div className="flex flex-wrap justify-center items-center gap-4">
           <button className="bg-200  text-white py-4 rounded-lg lg:w-1/12 sm:w-1/5 xs:w-full">
             All
           </button>
@@ -90,7 +90,7 @@ export default function AllCards() {
         </div>
       </div>
       {/* <Link href={"#shopping"}> */}
-      <div className="grid lg:grid-cols-4  sm:grid-cols-2 xs:grid-cols-1 gap-10">
+      <div className="grid lg:grid-cols-4  sm:grid-cols-2 xs:grid-cols-1 gap-5">
         <Card
           cardData={c1}
           code={c1Code}
@@ -148,7 +148,7 @@ export default function AllCards() {
           cardData={card1}
           code={card1Code}
           width=""
-          height="h-[400px]"
+          height="h-fit"
           flex="flex-col"
         />
         <Card
