@@ -24,7 +24,7 @@ type NoteItem = {
 const Notes = () => {
   const [activeTab, setActiveTab] = useState<Tab>("notes");
   const [content, setContent] = useState<Record<Tab, NoteItem[]>>(() => {
-    const savedContent = localStorage.getItem("notesContent");
+    const savedContent = localStorage?.getItem("notesContent");
     return savedContent
       ? JSON.parse(savedContent)
       : {
