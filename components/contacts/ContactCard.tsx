@@ -543,7 +543,7 @@ const ContactCard: React.FC = () => {
       <Box sx={{ bgcolor: "background.paper" }}>
         <List
           sx={{}}
-          className=" max-h-[95vh] overflow-y-scroll no-scrollbar p-2 bg-gray-100 dark:bg-dark"
+          className="max-h-[95vh] overflow-y-scroll no-scrollbar p-2 bg-gray-100 dark:bg-dark"
         >
           {contacts.map((contact) => (
             <ListItem
