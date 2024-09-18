@@ -24,7 +24,7 @@ type NoteItem = {
 const Notes = () => {
   const [activeTab, setActiveTab] = useState<Tab>("notes");
   const [content, setContent] = useState<Record<Tab, NoteItem[]>>(() => {
-    const savedContent = localStorage?.getItem("notesContent");
+    const savedContent = localStorage.getItem("notesContent");
     return savedContent
       ? JSON.parse(savedContent)
       : {
@@ -53,7 +53,22 @@ const Notes = () => {
   const [isEditModalOpen, setIsEditModalOpen] = useState(false);
 
   useEffect(() => {
-    localStorage.setItem("notesContent", JSON.stringify(content));
+    try {
+      const savedContent = localStorage.getItem("notesContent");
+      if (savedContent) {
+        setContent(JSON.parse(savedContent));
+      }
+    } catch (error) {
+      console.error("Error loading content from localStorage:", error);
+    }
+  }, []);
+
+  useEffect(() => {
+    try {
+      localStorage.setItem("notesContent", JSON.stringify(content));
+    } catch (error) {
+      console.error("Error saving content to localStorage:", error);
+    }
   }, [content]);
 
   const handleAddNote = () => {
