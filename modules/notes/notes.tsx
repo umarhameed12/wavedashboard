@@ -24,20 +24,24 @@ type NoteItem = {
 const Notes = () => {
   const [activeTab, setActiveTab] = useState<Tab>("notes");
   const [content, setContent] = useState<Record<Tab, NoteItem[]>>(() => {
-    const savedContent = localStorage.getItem("notesContent");
-    return savedContent
-      ? JSON.parse(savedContent)
-      : {
-          notes: [],
-          reminders: [],
-          archive: [],
-          family: [],
-          work: [],
-          tasks: [],
-          priority: [],
-          personal: [],
-          friends: [],
-        };
+    try {
+      const savedContent = window.localStorage.getItem("notesContent");
+      return savedContent
+        ? JSON.parse(savedContent)
+        : {
+            notes: [],
+            reminders: [],
+            archive: [],
+            family: [],
+            work: [],
+            tasks: [],
+            priority: [],
+            personal: [],
+            friends: [],
+          };
+    } catch (error) {
+      console.log(error);
+    }
   });
 
   const [isAddingNote, setIsAddingNote] = useState(false);
@@ -151,7 +155,7 @@ const Notes = () => {
         <div className="w-1/4 p-4 bg-white shadow-md rounded-tl-xl rounded-bl-xl">
           <ul className="overflow-y-scroll no-scrollbar max-h-[60vh]">
             {/* Tabs */}
-            {Object.keys(content).map((tab) => (
+            {Object?.keys(content).map((tab) => (
               <li
                 key={tab}
                 onClick={() => setActiveTab(tab as Tab)}
