@@ -21,28 +21,26 @@ type NoteItem = {
   image?: string;
 };
 
+const defaultTabs: Tab[] = [
+  "notes",
+  "reminders",
+  "archive",
+  "family",
+  "work",
+  "tasks",
+  "priority",
+  "personal",
+  "friends",
+];
+
 const Notes = () => {
   const [activeTab, setActiveTab] = useState<Tab>("notes");
-  const [content, setContent] = useState<Record<Tab, NoteItem[]>>(() => {
-    try {
-      const savedContent = window.localStorage.getItem("notesContent");
-      return savedContent
-        ? JSON.parse(savedContent)
-        : {
-            notes: [],
-            reminders: [],
-            archive: [],
-            family: [],
-            work: [],
-            tasks: [],
-            priority: [],
-            personal: [],
-            friends: [],
-          };
-    } catch (error) {
-      console.log(error);
-    }
-  });
+  const [content, setContent] = useState<Record<Tab, NoteItem[]>>(() =>
+    defaultTabs.reduce((acc, tab) => {
+      acc[tab] = [];
+      return acc;
+    }, {} as Record<Tab, NoteItem[]>)
+  );
 
   const [isAddingNote, setIsAddingNote] = useState(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
@@ -57,22 +55,28 @@ const Notes = () => {
   const [isEditModalOpen, setIsEditModalOpen] = useState(false);
 
   useEffect(() => {
-    try {
-      const savedContent = localStorage.getItem("notesContent");
-      if (savedContent) {
-        setContent(JSON.parse(savedContent));
+    // Load content from localStorage on component mount
+    const savedContent = localStorage.getItem("notesContent");
+    if (savedContent) {
+      try {
+        const parsedContent = JSON.parse(savedContent);
+        setContent(
+          defaultTabs.reduce((acc, tab) => {
+            acc[tab] = Array.isArray(parsedContent[tab])
+              ? parsedContent[tab]
+              : [];
+            return acc;
+          }, {} as Record<Tab, NoteItem[]>)
+        );
+      } catch (error) {
+        console.error("Error parsing saved content:", error);
       }
-    } catch (error) {
-      console.error("Error loading content from localStorage:", error);
     }
   }, []);
 
   useEffect(() => {
-    try {
-      localStorage.setItem("notesContent", JSON.stringify(content));
-    } catch (error) {
-      console.error("Error saving content to localStorage:", error);
-    }
+    // Save content to localStorage whenever it changes
+    localStorage.setItem("notesContent", JSON.stringify(content));
   }, [content]);
 
   const handleAddNote = () => {
@@ -87,17 +91,14 @@ const Notes = () => {
       };
       setContent((prevContent) => ({
         ...prevContent,
-        [activeTab]: [...prevContent[activeTab], newNoteWithId],
+        [activeTab]: [...(prevContent[activeTab] || []), newNoteWithId],
       }));
       setNewNote({ title: "", description: "", tags: [], image: undefined });
       setIsAddingNote(false);
     }
   };
 
-  const handleImageUpload = (
-    e: React.ChangeEvent<HTMLInputElement>,
-    p0?: boolean
-  ) => {
+  const handleImageUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
     if (file) {
       const reader = new FileReader();
@@ -154,11 +155,10 @@ const Notes = () => {
         {/* Sidebar */}
         <div className="w-1/4 p-4 bg-white shadow-md rounded-tl-xl rounded-bl-xl">
           <ul className="overflow-y-scroll no-scrollbar max-h-[60vh]">
-            {/* Tabs */}
-            {Object?.keys(content).map((tab) => (
+            {defaultTabs.map((tab) => (
               <li
                 key={tab}
-                onClick={() => setActiveTab(tab as Tab)}
+                onClick={() => setActiveTab(tab)}
                 className={`p-3 mb-2 cursor-pointer rounded ${
                   activeTab === tab ? "bg-gray-200" : "hover:bg-gray-100"
                 }`}
@@ -326,7 +326,18 @@ const Notes = () => {
             <input
               type="file"
               accept="image/*"
-              onChange={(e) => handleImageUpload(e, true)}
+              onChange={(e) => {
+                const file = e.target.files?.[0];
+                if (file) {
+                  const reader = new FileReader();
+                  reader.onloadend = () => {
+                    setEditingNote((prev) =>
+                      prev ? { ...prev, image: reader.result as string } : null
+                    );
+                  };
+                  reader.readAsDataURL(file);
+                }
+              }}
               className="mb-2"
             />
             {editingNote.image && (
