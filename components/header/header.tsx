@@ -18,11 +18,16 @@ export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
 
   const { theme } = useTheme();
+  const { isCollapsed } = useSidebar();
 
   return (
     <>
-      <div className="w-full hidden lg:flex items-center bg-white dark:bg-dark  px-4 py-4 md:justify-between  z-30">
-        <p className="ml-4 w-4/12 hidden lg:block">Dashboard</p>
+      <div
+        className={`w-full hidden lg:flex items-center bg-white dark:bg-dark  px-4 py-4 md:justify-between ${
+          isCollapsed ? "pl-0" : "lg:pl-24"
+        }`}
+      >
+        <p className="ml-4 hidden lg:block">Dashboard</p>
 
         <div className="lg:flex items-center w-8/12 space-x-4 xs:hidden xs:justify-around relative inline-block">
           <HeaderSearch />
@@ -167,6 +172,7 @@ const SidebarMobile = ({
 import Image from "next/image";
 import Moon from "@/assets/header/moon.svg";
 import Sun from "@/assets/header/sun.svg";
+import { useSidebar } from "@/app/context/sidebar-context";
 
 function DarkModeMobile() {
   const [mounted, setMounted] = useState<boolean>(false);

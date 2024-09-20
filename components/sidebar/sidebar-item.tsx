@@ -24,6 +24,7 @@ import Gallery from "@/assets/sidebar-icons/gallery.svg";
 import Charts from "@/assets/sidebar-icons/charts.svg";
 import { usePathname } from "next/navigation";
 import Academy from "@/assets/academy/icon.svg";
+import { useSidebar } from "@/app/context/sidebar-context";
 interface SidebarItemProps {
   isOpen: boolean;
 }
@@ -36,6 +37,7 @@ const SidebarItem: React.FC<SidebarItemProps> = ({ isOpen }) => {
   const [toggleError, setToggleError] = useState<boolean>(false);
   const [toggleHelp, setToggleHelp] = useState<boolean>(false);
   const [toggleIcon, setToggleIcon] = useState<boolean>(false);
+  const { isCollapsed } = useSidebar();
 
   const pathname = usePathname();
   const segments = pathname.split("/");
@@ -165,7 +167,11 @@ const SidebarItem: React.FC<SidebarItemProps> = ({ isOpen }) => {
 
   return (
     <div className=" z-50">
-      <h1 className="text-base font-medium uppercase my-2 text-white">
+      <h1
+        className={`text-base font-medium uppercase my-2 text-white ${
+          isOpen || isCollapsed ? "" : "hidden"
+        }`}
+      >
         Management
       </h1>
       {/* Dashboard */}
@@ -1317,7 +1323,13 @@ const SidebarItem: React.FC<SidebarItemProps> = ({ isOpen }) => {
         </div>
       </Link>
 
-      <h1 className="text-base font-medium uppercase my-2 text-white">pages</h1>
+      <h1
+        className={`text-base font-medium uppercase my-2 text-white ${
+          isOpen || isCollapsed ? "" : "hidden"
+        }`}
+      >
+        pages
+      </h1>
 
       {/* Auth */}
       <div
@@ -1726,7 +1738,11 @@ const SidebarItem: React.FC<SidebarItemProps> = ({ isOpen }) => {
           </div>
         </div>
       </Link>
-      <h1 className="text-base font-medium   uppercase my-2 text-white">
+      <h1
+        className={`text-base font-medium uppercase my-2 text-white ${
+          isOpen || isCollapsed ? "" : "hidden"
+        }`}
+      >
         compoenents
       </h1>
 

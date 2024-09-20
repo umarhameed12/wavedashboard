@@ -15,6 +15,7 @@ import ChartHeading from "@/components/dashboard/chart-heading";
 import SalesReportGraph from "@/components/dashboard/sales-report-graph";
 import ActiveCustomersChart from "@/components/dashboard/active-customers-chart";
 import PopularCategoriesChart from "@/components/dashboard/popular-categories-chart";
+import { useSidebar } from "@/app/context/sidebar-context";
 
 export default function Dashboard() {
   const [hasData, setHasData] = useState(false);
@@ -37,6 +38,7 @@ export default function Dashboard() {
     { country: "mx", value: 127318112 }, // mexico
   ];
 
+  const { isCollapsed } = useSidebar();
   return (
     <>
       {hasData && (
@@ -59,7 +61,11 @@ export default function Dashboard() {
               <Heading heading="Popular Categories" />
               <PopularCategoriesChart />
             </div>
-            <div className=" bg-white dark:bg-dark rounded-lg sm:p-8 xs:p-4 mt-8 xl:w-2/3 xs:w-full">
+            <div
+              className={`bg-white dark:bg-dark rounded-lg sm:p-8 xs:p-4 mt-8 ${
+                isCollapsed ? "xl:w-[59%]" : "xl:w-2/3 xs:w-full"
+              }`}
+            >
               <ChartHeading heading="Active Customers" />
               <ActiveCustomersChart />
             </div>
