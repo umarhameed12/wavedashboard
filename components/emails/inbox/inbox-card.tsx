@@ -74,7 +74,7 @@ export default function InboxCard() {
         </div>
       </div>
       {showModal ? (
-        <div className="z-10 fixed top-0 left-0 right-0 w-full h-full bottom-0 flex justify-center items-center  p-4 overflow-x-hidden  bg-black bg-opacity-50  inset-0">
+        <div className="z-[999] fixed top-0 left-0 right-0 w-full h-full bottom-0 flex justify-center items-center  p-4 overflow-x-hidden  bg-black bg-opacity-50  inset-0">
           <div className="relative md:w-1/2 xs:w-full ">
             <div className="relative bg-white rounded-lg shadow dark:bg-dark">
               <div className="w-full h-4/5 p-4 my-auto  ">

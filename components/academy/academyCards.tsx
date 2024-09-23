@@ -181,7 +181,7 @@ const AcademyCards = () => {
 
     {/* Toggle Button with Label */}
     <div className="flex items-center p-4">
-      <div className="relative gap-4 sm:right-2/4 sm:top-3 left-10 inline-flex items-center cursor-pointer">
+      <div className="relative gap-4 sm:right-2/4 sm:top-3 sm:left-10 inline-flex items-center cursor-pointer">
       <input
               type="checkbox"
               id="toggle-switch"

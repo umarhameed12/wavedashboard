@@ -7,8 +7,8 @@ import React from "react";
 
 const Notifications = () => {
   return (
-    <div className="mt-8 container max-w-[1120px] m-auto sm:px-10 px-5">
-      <div className="flex justify-between items-center flex-wrap">
+    <div className="sm:mt-8 mt-2 container max-w-[1120px] m-auto px-5">
+      <div className="flex justify-between items-center flex-wrap space-y-3">
         <div className="space-y-1">
           <div className="flex gap-2 text-sm">
             <Link href="/dashboard" className="text-[#0A74DA]">
@@ -45,7 +45,7 @@ const Notifications = () => {
           </Button>
         </div>
       </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 items-center gap-x-4 flex-wrap mt-5">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 items-center gap-x-4 mt-5">
         <NotificationsCard
           icon={
             <svg

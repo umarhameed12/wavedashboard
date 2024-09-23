@@ -23,7 +23,7 @@ export default function Chats() {
             ))}
           </div>
         </div>
-        <div className="w-3/5 lg:block xs:hidden dark:bg-dark rounded-lg">
+        <div className="w-3/5 lg:block xs:hidden dark:bg-dark rounded-lg h-fit">
           <Chatting />
         </div>
       </div>

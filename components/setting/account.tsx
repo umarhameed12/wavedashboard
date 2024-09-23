@@ -4,7 +4,7 @@ import React from "react";
 
 const Account = () => {
   return (
-    <div className="space-y-5 lg:w-3/4 w-full">
+    <div className="space-y-5 w-full">
       <h2 className="text-xl font-extrabold">Account</h2>
       <div className="space-y-4">
         <div>

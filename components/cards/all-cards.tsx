@@ -66,24 +66,24 @@ export default function AllCards() {
     <div className="m-4">
       <div className="bg-white dark:bg-dark rounded-lg p-4">
         <div className="flex flex-wrap justify-center items-center gap-4">
-          <button className="bg-200  text-white py-4 rounded-lg lg:w-1/12 sm:w-1/5 xs:w-full">
+          <button className="bg-200  text-white py-4 rounded-lg lg:w-1/6 sm:w-1/5 xs:w-full">
             All
           </button>
           {/* <Link href={"#shopping"}> */}
           <button
-            className="bg-100 dark:bg-button text-200  py-4 rounded-lg lg:w-1/12 sm:w-1/5 xs:w-full"
+            className="bg-100 dark:bg-button text-200  py-4 rounded-lg lg:w-1/6 sm:w-1/5 xs:w-full"
             id="Shopping"
           >
             Shopping
           </button>
           {/* </Link> */}
           {/* <Link href={"/dashboard/cards/#simple-card"}> */}
-          <button className="bg-100 dark:bg-button text-200  py-4 rounded-lg lg:w-1/12 sm:w-1/5 xs:w-full">
+          <button className="bg-100 dark:bg-button text-200  py-4 rounded-lg lg:w-1/6 sm:w-1/5 xs:w-full whitespace-nowrap">
             Simple Card
           </button>
           {/* </Link>
           <Link href={"#gallery"}> */}
-          <button className="bg-100 dark:bg-button text-200  py-4 rounded-lg lg:w-1/12 sm:w-1/5 xs:w-full">
+          <button className="bg-100 dark:bg-button text-200  py-4 rounded-lg lg:w-1/6 sm:w-1/5 xs:w-full">
             Gallery
           </button>
           {/* </Link> */}

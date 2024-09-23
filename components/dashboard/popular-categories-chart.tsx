@@ -54,7 +54,7 @@ const PopularCategoriesChart = () => {
     }
   }, []);
   return (
-    <div className="w-full h-fit md:h-[500px] xl:h-fit flex justify-center">
+    <div className="w-full h-fit md:h-[350px] xl:h-fit flex justify-center">
       <canvas id="popularCategoriesChart"></canvas>
     </div>
   );

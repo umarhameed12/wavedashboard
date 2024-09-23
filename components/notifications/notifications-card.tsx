@@ -17,7 +17,7 @@ const NotificationsCard = ({
 }: CardProps) => {
   return (
     <div
-      className={`relative my-2 p-8 rounded-xl flex items-center gap-4 ${
+      className={`relative my-2 p-4 rounded-xl flex items-center gap-4 ${
         background ? background : "bg-white dark:bg-dark"
       } ${color ? color : "text-black dark:text-white"}`}
     >
@@ -28,7 +28,7 @@ const NotificationsCard = ({
         viewBox="0 0 24 24"
         strokeWidth={1.5}
         stroke="currentColor"
-        className="w-4 h-4 absolute top-0 right-4 m-2"
+        className="w-4 h-4 absolute top-0 right-1 m-2"
       >
         <path
           strokeLinecap="round"

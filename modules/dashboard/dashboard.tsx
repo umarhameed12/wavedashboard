@@ -43,15 +43,15 @@ export default function Dashboard() {
     <>
       {hasData && (
         <div className="m-4">
-          <div className="gap-4 flex lg:flex-row xs:flex-col justify-between  text-black dark:text-white w-full">
-            <div className="lg:w-3/4 xs:w-full">
+          <div className="gap-4 flex xl:flex-row xs:flex-col justify-between  text-black dark:text-white w-full">
+            <div className="xl:w-[70%] xs:w-full">
               <Analytics />
               <div className=" bg-white dark:bg-dark rounded-lg p-8 mt-4">
                 <ChartHeading heading="Sale Report" />
                 <SalesReportGraph />
               </div>
             </div>
-            <div className="lg:w-1/4 xs:w-full flex lg:flex-col sm:flex-row xs:flex-col gap-4">
+            <div className="xl:w-[30%] xs:w-full flex xl:flex-col sm:flex-row xs:flex-col gap-4">
               <TopProducts />
               <TopCustomers />
             </div>

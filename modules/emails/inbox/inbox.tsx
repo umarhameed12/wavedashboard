@@ -5,7 +5,7 @@ import React from "react";
 
 export default function Inbox() {
   return (
-    <div className="flex lg:flex-row xs:flex-col m-4 gap-8">
+    <div className="flex lg:flex-row xs:flex-col m-4 gap-4">
       <div className="mb-2 lg:hidden xs:block">
         <InboxCard />
       </div>
@@ -15,7 +15,7 @@ export default function Inbox() {
           <InboxDatatable />
         </div>
       </div>
-      <div className="lg:w-1/5 xs:w-full lg:block xs:hidden  ">
+      <div className="lg:w-1/4 xs:w-full lg:block xs:hidden ">
         <InboxCard />
       </div>
     </div>

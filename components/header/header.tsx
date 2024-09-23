@@ -24,7 +24,7 @@ export default function Header() {
     <>
       <div
         className={`w-full hidden lg:flex items-center bg-white dark:bg-dark  px-4 py-4 md:justify-between ${
-          isCollapsed ? "pl-0" : "lg:pl-24"
+          isCollapsed ? "lg:pl-5" : "lg:pl-24"
         }`}
       >
         <p className="ml-4 hidden lg:block">Dashboard</p>
@@ -45,7 +45,7 @@ export default function Header() {
           className="bg-100 dark:bg-dark200 rounded-full w-10  p-2  border-gray-300 border-solid border-[1px]"
         /> */}
           <svg
-            className=" text-gray-800 dark:text-white rounded-full w-16 p-1 h-[2.4rem] border  border-gray-300 bg-100 dark:bg-dark200"
+            className=" text-gray-800 dark:text-white rounded-full w-20 py-1 px-2 h-[2.4rem] border  border-gray-300 bg-100 dark:bg-dark200"
             aria-hidden="true"
             xmlns="http://www.w3.org/2000/svg"
             width="24"
@@ -62,7 +62,7 @@ export default function Header() {
             viewBox="0 0 24 24"
             strokeWidth={1.5}
             stroke="currentColor"
-            className=" text-gray-800 dark:text-white rounded-full w-16 p-1 h-[2.4rem] border  border-gray-300 bg-100 dark:bg-dark200"
+            className=" text-gray-800 dark:text-white rounded-full w-20 py-1 px-2 h-[2.4rem] border  border-gray-300 bg-100 dark:bg-dark200"
           >
             <path
               strokeLinecap="round"

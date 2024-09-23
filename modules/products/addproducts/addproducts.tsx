@@ -13,8 +13,8 @@ export default function AddProducts() {
       <div>
         <ProductImage />
       </div>
-      <div className="flex justify-center items-center gap-8 font-medium md:flex-row xs:flex-col">
-        <button className="text-red bg-rose-200 dark:bg-rose-300  flex-1 w-full px-3 py-4 rounded-lg font-medium ">
+      <div className="flex justify-center items-center gap-4 font-medium md:flex-row xs:flex-col">
+        <button className="text-red bg-rose-200 dark:bg-rose-300  flex-1 w-full px-3 py-4 rounded-lg font-medium">
           Cancel
         </button>
         <button className="bg-200 text-white flex-1 px-3 py-4 rounded-lg w-full font-medium">

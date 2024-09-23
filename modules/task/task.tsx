@@ -89,7 +89,7 @@ export default function Task() {
   return (
     <DndProvider backend={HTML5Backend}>
       <div className="m-4">
-        <div className="grid lg:grid-cols-4 sm:grid-cols-2 xs:grid-cols-1 gap-8 my-4">
+        <div className="grid lg:grid-cols-4 sm:grid-cols-2 xs:grid-cols-1 gap-4 my-4">
           {/* <TaskHeader todos={todos} status="In Progress" moveTodo={moveTodo} /> */}
           <TaskHeader todos={todos} status="In Progress" moveTodo={moveTodo} />
           <TaskHeader todos={todos} status="On Hold" moveTodo={moveTodo} />

@@ -18,7 +18,7 @@ export default function Sidebar() {
 
   const toggleCollapse = () => {
     setIsCollapsed(!isCollapsed);
-    setIsOpen(!isCollapsed);
+    setIsOpen(!isOpen);
   };
 
   useEffect(() => {

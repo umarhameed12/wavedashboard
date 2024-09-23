@@ -6,7 +6,7 @@ import React from "react";
 const Security = () => {
   const label = { inputProps: { "aria-label": "Switch demo" } };
   return (
-    <div className="space-y-5 lg:w-3/4 w-full">
+    <div className="space-y-5 w-full">
       <h2 className="text-xl font-extrabold">Security</h2>
       <div className="space-y-4">
         <div>

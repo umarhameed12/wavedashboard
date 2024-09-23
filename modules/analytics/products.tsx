@@ -9,12 +9,12 @@ import React from "react";
 export default function Products() {
   return (
     <div className="m-4">
-      <div className="flex lg:flex-row xs:flex-col gap-8 w-full">
+      <div className="flex lg:flex-row xs:flex-col gap-4 w-full">
         <div className="lg:w-2/3 xs:w-full bg-white dark:bg-dark p-4 rounded-lg">
           <SellingProducts />
         </div>
         <div className="lg:w-1/3 xs:w-full">
-          <div className="flex gap-2 sm:flex-row xs:flex-col">
+          <div className="flex gap-2 sm:flex-row xl:flex-row lg:flex-col xs:flex-col">
             <div className="bg-white dark:bg-dark p-4 rounded-lg w-full">
               {profit.map((item, index) => (
                 <TotalCards
@@ -39,8 +39,8 @@ export default function Products() {
               ))}
             </div>
           </div>
-          <div className="flex lg:flex-row xs:flex-col  gap-4 h-auto w-full">
-            <div className="h-1/2 bg-white dark:bg-dark rounded-lg mt-12 lg:w-full  xs:w-full ">
+          <div className="flex lg:flex-row xs:flex-col  gap-4 h-fit w-full">
+            <div className="h-fit bg-white dark:bg-dark rounded-lg mt-4 lg:w-full xs:w-full p-3">
               <p className="font-bold text-base p-4">Popular Categories</p>
               <PopularCategoriesChart />
             </div>

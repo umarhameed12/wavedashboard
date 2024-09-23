@@ -163,7 +163,7 @@ const Notes = () => {
   return (
     <div className="py-5 container m-auto max-w-[1250px] px-10">
       <NotesHead toggleDrawer={toggleDrawer(true)} />
-      <div className="flex h-screen bg-white dark:bg-[#1e1e1e] rounded-xl mt-10">
+      <div className="flex h-fit bg-white dark:bg-[#1e1e1e] rounded-xl mt-10">
         {/* Sidebar */}
         <div className="w-1/4 p-4 bg-white dark:bg-[#1e1e1e] rounded-tl-xl rounded-bl-xl lg:block hidden">
           <ul className="overflow-y-scroll no-scrollbar max-h-[60vh]">
@@ -186,7 +186,7 @@ const Notes = () => {
           open={open}
           onClose={handleDrawerClose}
         >
-          <div className="md:w-[500px] w-[300px] p-4 bg-white dark:bg-[#1e1e1e]  relative h-full">
+          <div className="md:w-[500px] w-[300px] p-4 bg-white dark:bg-[#1e1e1e]  relative h-fit">
             <ul className="mt-10">
               {defaultTabs.map((tab) => (
                 <li
@@ -359,7 +359,7 @@ const Notes = () => {
       {/* Edit Modal */}
       {isEditModalOpen && editingNote && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
-          <div className="bg-white dark:bg-[#1e1e1e] rounded-lg w-1/4 overflow-y-scroll no-scrollbar max-h-[100vh]">
+          <div className="bg-white dark:bg-[#1e1e1e] rounded-lg w-1/2 overflow-y-scroll no-scrollbar max-h-[90vh]">
             {editingNote.image && (
               <img
                 src={editingNote.image}

@@ -112,7 +112,7 @@ export default function CustomerForm() {
           />
           <Label label="Phone" />
         </div>
-        <div className="flex lg:flex-row justify-center items-center gap-8  font-medium mt-4 xs:flex-col">
+        <div className="flex lg:flex-row justify-center items-center gap-4  font-medium mt-4 xs:flex-col">
           <button className="text-red bg-[#FECDD3] flex-1 px-3 py-4 rounded-lg font-medium w-full ">
             Cancel
           </button>

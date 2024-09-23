@@ -17,7 +17,7 @@ const DashboardLayoutContent: React.FC<{ children: React.ReactNode }> = ({
       >
         <Sidebar />
       </div>
-      <div className={`bg-100 dark:bg-dark200  ${isCollapsed ? "lg:w-[83%]" : "w-full"}`}>
+      <div className={`bg-100 dark:bg-dark200  ${isCollapsed ? "lg:w-[80%] w-full" : "w-full"}`}>
         <Header />
         <div
           className={`overflow-y-scroll no-scrollbar max-h-screen ${

@@ -589,7 +589,7 @@ const ContactCard: React.FC = () => {
                       position: "absolute",
                       top: 8,
                       right: 8,
-                      color: "black",
+                      color: currentTheme === "dark" ? "white" : "black",
                       backgroundColor: "rgba(0, 0, 0, 0.4)",
                       "&:hover": {
                         backgroundColor: "rgba(0, 0, 0, 0.6)",

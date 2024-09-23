@@ -112,7 +112,7 @@ const SettingData = () => {
 
   return (
     <div className="flex min-h-screen bg-gray-100 dark:bg-dark">
-      <div className="w-64 bg-white shadow-md dark:bg-dark200 lg:block hidden">
+      <div className="w-[25%] bg-white shadow-md dark:bg-dark200 lg:block hidden">
         <hr />
         <div className="p-8">
           <h1 className="text-2xl font-extrabold">Settings</h1>

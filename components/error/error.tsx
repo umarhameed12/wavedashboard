@@ -7,7 +7,7 @@ interface Error {
 }
 export default function Error({ icon, title, para }: Error) {
   return (
-    <div className="bg-white dark:bg-dark m-4 p-6 rounded-lg h-[85vh] flex flex-col justify-center items-center text-center space-y-8">
+    <div className="bg-white dark:bg-dark m-4 p-6 rounded-lg h-fit flex flex-col justify-center items-center text-center space-y-8">
       {/* <Image src={Error404} alt="Error ICON" />
        */}
       {icon}

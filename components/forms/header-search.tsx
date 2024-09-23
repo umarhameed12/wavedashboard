@@ -10,7 +10,7 @@ export default function HeaderSearch() {
         className="outline-none w-full focus:outline-none bg-transparent py-2 ml-2"
         placeholder="Search..."
       />
-      <div className="flex items-center justify-center bg-200 w-1/6 rounded-r-lg cursor-pointer">
+      <div className="flex items-center justify-center bg-200 p-4 rounded-r-lg cursor-pointer">
         <Image src={SearchIcon} alt={"search"} />
       </div>
     </div>
